@@ -34,7 +34,7 @@
             
         </StackPanel>
         <StackPanel Height="325" VerticalAlignment="Bottom">
-            <TextBox x:Name="tbNome" Foreground="Black" Margin="0,60,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" BorderBrush="Black" Cursor="Arrow" />
+            <TextBox materialDesign:HintAssist.Hint="Nome da Marca" materialDesign:HintAssist.IsFloating="True" x:Name="tbNome" Foreground="Black" Margin="0,60,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" BorderBrush="Black" Cursor="Arrow" />
             <Button Content="Atualizar marca" Width="300" Margin="0,40,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" />
         </StackPanel>
 

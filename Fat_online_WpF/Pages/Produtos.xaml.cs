@@ -27,10 +27,10 @@ namespace Fat_online_WpF.Pages
         public Produtos()
         {
             InitializeComponent();
-            LoadMarcas();
+            LoadComboboxes();
         }
 
-        public void LoadMarcas()
+        public void LoadComboboxes()
         {
             string server = "localhost";
             string database = "fatonline";
@@ -48,6 +48,17 @@ namespace Fat_online_WpF.Pages
             {
                 cbMarca.Items.Add(Reader.GetString(1));
             }
+            Reader.Close();
+
+            sql = "SELECT * FROM categorias";
+            cmd = new MySqlCommand(sql, con);
+            Reader = cmd.ExecuteReader();
+
+            while (Reader.Read())
+            {
+                cbCategoria.Items.Add(Reader.GetString(1));
+            }
+
             Reader.Close();
             con.Close();
         }
