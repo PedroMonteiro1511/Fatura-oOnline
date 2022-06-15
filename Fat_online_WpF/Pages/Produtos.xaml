@@ -1,0 +1,75 @@
+﻿<Page x:Class="Fat_online_WpF.Pages.Produtos"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Fat_online_WpF.Pages"
+      
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="#FFFFFF"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+      
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="850"
+      Title="Produtos">
+
+
+    <Grid Background="#ffffff">
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Height="429" VerticalAlignment="Top" >
+                <TextBox x:Name="tbNome" HorizontalAlignment="Right" Foreground="Black" Margin="0,70,70,0" Width="300" materialDesign:HintAssist.Hint="Nome do Produto" materialDesign:HintAssist.IsFloating="True" BorderBrush="Black"/>
+                <TextBox x:Name="tbReferencia" HorizontalAlignment="Right" Foreground="Black" Margin="0,70,70,0" Width="300" materialDesign:HintAssist.Hint="Referencia do Produto" materialDesign:HintAssist.IsFloating="True" BorderBrush="Black"/>
+                <TextBox x:Name="tbDesc" HorizontalAlignment="Right" Foreground="Black" Margin="0,70,70,0" Width="300" materialDesign:HintAssist.Hint="Descrição do Produto" materialDesign:HintAssist.IsFloating="True" Cursor="Arrow" BorderBrush="Black"/>
+                <ComboBox x:Name="cbMarca" HorizontalAlignment="Right" 
+                      Foreground="Black" 
+                      Margin="0,40,70,0" Width="300" 
+                      materialDesign:HintAssist.Hint="Marca do Produto" 
+                      materialDesign:HintAssist.IsFloating="True" BorderBrush="Black"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Height="350" VerticalAlignment="Top">
+                <ComboBox x:Name="cbCategoria" HorizontalAlignment="Left" 
+                      Foreground="Black"
+                      Margin="70,70,0,0" Width="300" 
+                      materialDesign:HintAssist.Hint="Categoria do Produto" 
+                      materialDesign:HintAssist.IsFloating="True" BorderBrush="Black">
+
+                    <ComboBoxItem Foreground="Black" Name="cat1">Categoria 1</ComboBoxItem>
+                    <ComboBoxItem Foreground="Black" Name="cat2">Categoria 2</ComboBoxItem>
+                    <ComboBoxItem Foreground="Black" Name="cat3">Categoria 3</ComboBoxItem>
+
+                </ComboBox>
+
+                <ComboBox x:Name="cbSubCategoria" HorizontalAlignment="Left" 
+                      Foreground="Black" 
+                      Margin="70,70,0,0" Width="300" 
+                      materialDesign:HintAssist.Hint="SubCategoria do Produto"
+                      materialDesign:HintAssist.IsFloating="True" BorderBrush="Black">
+
+                    <ComboBoxItem Foreground="Black" Name="scat1">SubCategoria 1</ComboBoxItem>
+                    <ComboBoxItem Foreground="Black" Name="scat2">SubCategoria 2</ComboBoxItem>
+                    <ComboBoxItem Foreground="Black" Name="scat3">SubCategoria 3</ComboBoxItem>
+
+                </ComboBox>
+                <TextBox x:Name="tbPreco" HorizontalAlignment="Left" Foreground="Black" Margin="70,70,0,0" Width="300" materialDesign:HintAssist.Hint="Preço do Produto" materialDesign:HintAssist.IsFloating="True" Cursor="Arrow" BorderBrush="Black" PreviewTextInput="tbPreco_PreviewTextInput"/>
+            </StackPanel>
+        </Grid>
+        
+
+        <StackPanel Width="640" Height="200" VerticalAlignment="Bottom">
+            <Button x:Name="inserirProduto" Foreground="White" Content="Inserir Novo Produto" Width="200" Cursor="Hand" Click="inserirProduto_Click" />
+        </StackPanel>
+
+    </Grid>
+
+</Page>

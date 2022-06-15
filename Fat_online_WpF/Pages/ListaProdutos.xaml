@@ -1,0 +1,52 @@
+﻿<Page x:Class="Fat_online_WpF.Pages.ListaProdutos"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Fat_online_WpF.Pages"
+      
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="#FFFFFF"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+      
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="850"
+      Title="ListaProdutos">
+
+    <Page.Resources>
+        <Style TargetType="DataGridColumnHeader" x:Key="Header">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style TargetType="DataGridCell" x:Key="ActiveCellStyle">
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <StackPanel Height="325" VerticalAlignment="Top">
+            <DataGrid Style="{StaticResource MaterialDesignDataGrid}" IsReadOnly="True" Background="White" x:Name="dataProdutos" Height="325" Width="auto" SelectionChanged="dataProdutos_SelectionChanged"/>
+        </StackPanel>
+        <Grid Height="200" Width="850" VerticalAlignment="Top" Margin="0,325,0,0">
+            <StackPanel Height="325" Width="425" HorizontalAlignment="Left">
+                <TextBox x:Name="tbNome" Foreground="Black" Margin="0,20,0,0" Width="200" BorderBrush="Black" />
+                <TextBox x:Name="tbReferencia" Foreground="Black" Margin="0,20,0,0" Width="200" BorderBrush="Black" />
+                <TextBox x:Name="tbDescricao" Foreground="Black" Margin="0,20,0,0" Width="200" BorderBrush="Black" />
+                <TextBox x:Name="tbMarca" Foreground="Black" Margin="0,20,0,0" Width="200" BorderBrush="Black" />
+            </StackPanel>
+            <StackPanel Height="325" Width="425" HorizontalAlignment="Right">
+                <TextBox x:Name="tbCategoria" Foreground="Black" Margin="0,20,0,0" Width="200" BorderBrush="Black" />
+                <TextBox x:Name="tbSubCategoria" Foreground="Black" Margin="0,20,0,0" Width="200" BorderBrush="Black" />
+                <TextBox x:Name="tbPreco" Foreground="Black" Margin="0,20,0,0" Width="200" BorderBrush="Black" />
+            </StackPanel>
+        </Grid>
+        <Grid Height="125" Width="850" VerticalAlignment="Bottom">
+            <Button x:Name="updateProduto" Width="300" Content="Atualizar Produto" Foreground="White" Cursor="Hand" />
+        </Grid>
+    </Grid>
+</Page>
