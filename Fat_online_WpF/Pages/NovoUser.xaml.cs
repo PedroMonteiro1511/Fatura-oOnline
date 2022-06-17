@@ -27,25 +27,6 @@ namespace Fat_online_WpF.Pages
             InitializeComponent();
         }
 
-        public void dbquery(string query)
-        {
-            string server = "localhost";
-            string database = "fatonline";
-            string username = "root";
-            string password = "";
-            string connection = "Server=" + server + ";" + "Database=" + database + ";" + "UID=" + username + ";" + "Password=" + password + ";";
-
-            MySqlConnection con = new MySqlConnection(connection);
-            con.Open();
-            MySqlCommand cm = new MySqlCommand(query, con);
-            int value = cm.ExecuteNonQuery();
-            if (value == 1)
-            {
-                MessageBox.Show("Utilizador Adicionado com Sucesso");
-            }
-            con.Close();
-        }
-
         private void inserirUser_Click(object sender, RoutedEventArgs e)
         {
             int valida = 0;
@@ -77,9 +58,9 @@ namespace Fat_online_WpF.Pages
                 
                 //Construir a query para inserir os dados na base de dados
                 string query = "INSERT INTO `users`(`nome`, `Email`,`Morada`,`Telefone`,`Password`) VALUES ('" + tbNome.Text + "','" + tbEmail.Text + "','" + tbMorada.Text + "','" + tbTelefone.Text + "','" + password + "')";
-                
+
                 //Metodo que faz a conexão e inserção dos dados
-                dbquery(query);
+                DBC.OpenAndExecute(query);
             }
         }
     }
