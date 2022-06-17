@@ -26,11 +26,15 @@ namespace Fat_online_WpF
             Frame.Navigate(new Uri("Pages/Home.xaml", UriKind.RelativeOrAbsolute));
         }
 
+
+        //Botão para fechar a aplicação
         private void CloseBtn_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
 
+
+        //Butão Maximizar -- Minimizar
         private void MaxBtn_Click(object sender, RoutedEventArgs e)
         {
             if (WindowState == WindowState.Normal)
@@ -46,11 +50,8 @@ namespace Fat_online_WpF
             }
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
 
+        // Definir os eventos click para abrir os menus
         private void listaVendas_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(new Uri("Pages/Vendas.xaml", UriKind.RelativeOrAbsolute));
@@ -80,6 +81,44 @@ namespace Fat_online_WpF
         private void novaMarca_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(new Uri("Pages/NovaMarca.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void listaCategorias_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(new Uri("Pages/listaCategorias.xaml", UriKind.RelativeOrAbsolute));
+           
+        }
+
+        private void novaCategoria_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(new Uri("Pages/NovaCategoria.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void listaSubCategorias_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(new Uri("Pages/ListaSubCategorias.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void novaSubCategoria_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(new Uri("Pages/NovaSubCategoria.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void listaUsers_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(new Uri("Pages/ListaUsers.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void novoUser_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(new Uri("Pages/NovoUser.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Close();
         }
     }
 }

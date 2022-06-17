@@ -15,7 +15,7 @@
      FontFamily="{DynamicResource MaterialDesignFont}"
         
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="1100" WindowStyle="None" WindowStartupLocation="CenterScreen" AllowsTransparency="True"   >
+        Title="MainWindow" Height="700" Width="1100" WindowStyle="None" WindowStartupLocation="CenterScreen" AllowsTransparency="True">
     <Grid Background="#FFFFFF">
 
         <!--Painel do menu-->
@@ -78,7 +78,7 @@
                 <!--// Menu Principal - Vendas //-->
 
                 <MenuItem Header="Vendas"
-                          Template="{StaticResource Menu_SubMenu_Template}" Height="50" Width="250" Click="MenuItem_Click">
+                          Template="{StaticResource Menu_SubMenu_Template}" Height="50" Width="250">
 
                     <MenuItem.Icon>
 
@@ -209,7 +209,8 @@
                     <!--// Categorias - SubMenu //-->
 
                     <MenuItem Header="Lista de Categorias"
-                              Template="{StaticResource Item_Template}">
+                              x:Name="listaCategorias"
+                              Template="{StaticResource Item_Template}" Click="listaCategorias_Click">
 
                         <MenuItem.Icon>
 
@@ -219,7 +220,8 @@
 
                     </MenuItem>
                     <MenuItem Header="Nova Categoria"
-                              Template="{StaticResource Item_Template}">
+                              x:Name="novaCategoria"
+                              Template="{StaticResource Item_Template}" Click="novaCategoria_Click">
 
 
                         <MenuItem.Icon>
@@ -247,7 +249,8 @@
                     <!--// Subcategorias - SubMenu //-->
 
                     <MenuItem Header="Lista de Subcategorias"
-                              Template="{StaticResource Item_Template}">
+                              x:Name="listaSubCategorias"
+                              Template="{StaticResource Item_Template}" Click="listaSubCategorias_Click">
 
                         <MenuItem.Icon>
 
@@ -257,7 +260,8 @@
 
                     </MenuItem>
                     <MenuItem Header="Nova Subcategoria"
-                              Template="{StaticResource Item_Template}">
+                              x:Name="novaSubCategoria"
+                              Template="{StaticResource Item_Template}" Click="novaSubCategoria_Click">
 
 
                         <MenuItem.Icon>
@@ -285,7 +289,8 @@
                     <!--// Utilizadores - SubMenu //-->
 
                     <MenuItem Header="Lista de Utilizadores"
-                              Template="{StaticResource Item_Template}">
+                              x:Name="listaUsers"
+                              Template="{StaticResource Item_Template}" Click="listaUsers_Click">
 
                         <MenuItem.Icon>
 
@@ -295,7 +300,8 @@
 
                     </MenuItem>
                     <MenuItem Header="Novo Utilizador"
-                              Template="{StaticResource Item_Template}">
+                              x:Name="novoUser"
+                              Template="{StaticResource Item_Template}" Click="novoUser_Click">
 
 
                         <MenuItem.Icon>
@@ -309,6 +315,31 @@
                 </MenuItem>
 
 
+            </Menu>
+
+            <Menu Height="130" >
+                <Menu.ItemsPanel>
+
+                    <ItemsPanelTemplate>
+
+                        <VirtualizingStackPanel Orientation="Vertical" />
+
+                    </ItemsPanelTemplate>
+
+                </Menu.ItemsPanel>
+
+                <MenuItem Header="Login"
+                          x:Name="Login"
+                          Template="{StaticResource Menu_Template}" Click="Login_Click">
+
+                    <MenuItem.Icon>
+
+                        <materialDesign:PackIcon Kind="LoginVariant" Width="30" Height="30" Foreground="White" />
+
+                    </MenuItem.Icon>
+
+
+                </MenuItem>
             </Menu>
 
         </StackPanel>

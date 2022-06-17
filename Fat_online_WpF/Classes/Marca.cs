@@ -12,6 +12,6 @@ namespace Fat_online_WpF
 
         public string Name { get; set; }
 
-
     }
+
 }

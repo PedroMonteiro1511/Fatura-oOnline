@@ -43,6 +43,7 @@ namespace Fat_online_WpF.Pages
                 MessageBox.Show("Marca Adicionada com Sucesso");
             }
             con.Close();
+            
         }
 
         private void inserirMarca_Click(object sender, RoutedEventArgs e)

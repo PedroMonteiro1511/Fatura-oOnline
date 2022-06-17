@@ -44,6 +44,8 @@ namespace Fat_online_WpF.Pages
             MySqlCommand cmd = new MySqlCommand(sql, con);
             MySqlDataReader Reader = cmd.ExecuteReader();
 
+
+            //Inserir dados na combobox das marcas
             while (Reader.Read())
             {
                 cbMarca.Items.Add(Reader.GetString(1));
@@ -54,12 +56,25 @@ namespace Fat_online_WpF.Pages
             cmd = new MySqlCommand(sql, con);
             Reader = cmd.ExecuteReader();
 
+
+            //Inserir dados na combobox das Categorias
             while (Reader.Read())
             {
                 cbCategoria.Items.Add(Reader.GetString(1));
             }
-
             Reader.Close();
+
+            sql = "SELECT * FROM subcategorias";
+            cmd = new MySqlCommand(sql, con);
+            Reader = cmd.ExecuteReader();
+
+
+            //Inserir dados na combobox das subcategorias
+            while (Reader.Read())
+            {
+                cbSubCategoria.Items.Add(Reader.GetString(2));
+            }
+
             con.Close();
         }
 

@@ -1,0 +1,54 @@
+﻿<Page x:Class="Fat_online_WpF.Pages.ListaUsers"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Fat_online_WpF.Pages"
+      
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+      
+      mc:Ignorable="d" 
+      Background="#FFFFFF"
+      d:DesignHeight="650" d:DesignWidth="850"
+      Title="Lista Utilizadores">
+
+    <Page.Resources>
+        <Style TargetType="DataGridColumnHeader" x:Key="Header">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style TargetType="DataGridCell" x:Key="ActiveCellStyle">
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <StackPanel Height="325" VerticalAlignment="Top">
+            <DataGrid Style="{StaticResource MaterialDesignDataGrid}" IsReadOnly="True" Background="White" x:Name="dataUsers" Height="325" Width="auto"/>
+
+        </StackPanel>
+        <Grid VerticalAlignment="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Height="300" Grid.Column="0" VerticalAlignment="Top">
+                <TextBox materialDesign:HintAssist.Hint="Nome do Utilizador" materialDesign:HintAssist.IsFloating="True" x:Name="tbNome" Foreground="Black" Margin="0,20,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" BorderBrush="Black" Cursor="Arrow" />
+                <TextBox materialDesign:HintAssist.Hint="Email do Utilizador" materialDesign:HintAssist.IsFloating="True" x:Name="tbReferencia" Foreground="Black" Margin="0,20,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" BorderBrush="Black" Cursor="Arrow" />
+
+            </StackPanel>
+            <StackPanel Height="250" Grid.Column="1" VerticalAlignment="Top">
+                <TextBox materialDesign:HintAssist.Hint="Morada do Utilizador" materialDesign:HintAssist.IsFloating="True" x:Name="tbDesricao" Foreground="Black" Margin="0,20,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" BorderBrush="Black" Cursor="Arrow" />
+                <TextBox materialDesign:HintAssist.Hint="Telefone do Utilizador" materialDesign:HintAssist.IsFloating="True" x:Name="tbMarca" Foreground="Black" Margin="0,20,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" BorderBrush="Black" Cursor="Arrow" />
+            </StackPanel>
+        </Grid>
+        <Button x:Name="btnSubCategoria" Content="Atualizar Utilizador" Width="300" Margin="0,0,0,40" HorizontalAlignment="Center" VerticalAlignment="Bottom" Cursor="Hand" />
+        
+    </Grid>
+</Page>

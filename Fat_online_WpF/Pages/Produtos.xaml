@@ -54,13 +54,7 @@
                       Foreground="Black" 
                       Margin="70,70,0,0" Width="300" 
                       materialDesign:HintAssist.Hint="SubCategoria do Produto"
-                      materialDesign:HintAssist.IsFloating="True" BorderBrush="Black">
-
-                    <ComboBoxItem Foreground="Black" Name="scat1">SubCategoria 1</ComboBoxItem>
-                    <ComboBoxItem Foreground="Black" Name="scat2">SubCategoria 2</ComboBoxItem>
-                    <ComboBoxItem Foreground="Black" Name="scat3">SubCategoria 3</ComboBoxItem>
-
-                </ComboBox>
+                      materialDesign:HintAssist.IsFloating="True" BorderBrush="Black"/>
                 <TextBox x:Name="tbPreco" HorizontalAlignment="Left" Foreground="Black" Margin="70,70,0,0" Width="300" materialDesign:HintAssist.Hint="Preço do Produto" materialDesign:HintAssist.IsFloating="True" Cursor="Arrow" BorderBrush="Black" PreviewTextInput="tbPreco_PreviewTextInput"/>
             </StackPanel>
         </Grid>

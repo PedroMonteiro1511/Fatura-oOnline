@@ -1,0 +1,58 @@
+﻿<Page x:Class="Fat_online_WpF.Pages.NovoUser"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Fat_online_WpF.Pages"
+      
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="#F6F7EB"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+      
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="850"
+      Title="Users">
+
+
+    <Grid Background="#FFFFFF">
+        <Grid>
+           
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBox x:Name="tbNome" Foreground="Black" Margin="30,20,30,0" materialDesign:HintAssist.Hint="Nome do Utilizador" materialDesign:HintAssist.IsFloating="True" BorderBrush="Black" Cursor="Arrow"/>
+                        <TextBox x:Name="tbEmail" Foreground="Black" Margin="30,20,30,0" materialDesign:HintAssist.Hint="Email do Utilizador" materialDesign:HintAssist.IsFloating="True" BorderBrush="Black" Cursor="Arrow"/>
+                        <TextBox x:Name="tbPassword" Foreground="Black" Margin="30,20,30,0" materialDesign:HintAssist.Hint="Password do Utilizador" materialDesign:HintAssist.IsFloating="True" BorderBrush="Black" Cursor="Arrow"/>
+                        
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Column="1" VerticalAlignment="Center">
+                    <StackPanel>
+                        <TextBox x:Name="tbMorada" Foreground="Black" Margin="30,20,30,0" materialDesign:HintAssist.Hint="Morada do Utilizador" materialDesign:HintAssist.IsFloating="True" BorderBrush="Black" Cursor="Arrow"/>
+                        <TextBox x:Name="tbTelefone" Foreground="Black" Margin="30,20,30,0" materialDesign:HintAssist.Hint="Telefone do Utilizador" materialDesign:HintAssist.IsFloating="True" BorderBrush="Black" Cursor="Arrow"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Button Margin="150,0,150,0" Content="Adicionar Utilizador" Foreground="White" x:Name="inserirUser" Click="inserirUser_Click" Cursor="Hand"/>
+            </Grid>
+        </Grid>
+    </Grid>
+
+</Page>

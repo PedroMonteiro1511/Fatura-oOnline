@@ -69,8 +69,7 @@ namespace Fat_online_WpF.Pages
 
         private void dataProdutos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (dataProdutos.SelectedIndex > 0)
-            {
+           
                 object item = dataProdutos.SelectedItem; //probably you find this object
                 string ID = (dataProdutos.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text;
                 string Nome = (dataProdutos.SelectedCells[1].Column.GetCellContent(item) as TextBlock).Text;
@@ -87,7 +86,7 @@ namespace Fat_online_WpF.Pages
                 tbCategoria.Text = Categoria;
                 tbSubCategoria.Text = SubCategoria;
                 tbPreco.Text = Preco;
-            }
+            
         }
     }
 }
