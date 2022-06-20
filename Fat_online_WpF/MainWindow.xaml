@@ -25,22 +25,48 @@
 
             <!--// Nome Aplicação //-->
 
-            <Grid Height="50"
+            <Grid Height="100"
                   VerticalAlignment="Top"
                   Margin="0,30,0,0">
 
-                <Border Background="Orange"
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Border Background="Orange"
                         Height="25"
                         CornerRadius="3,0,0,3"
                         Width="6"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Right" />
 
-                <TextBlock Text="Faturação Online"
+                    <TextBlock Text="Faturação Online"
                            Foreground="#FFFFFF"
                            FontSize="15"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center" />
+                </Grid>
+
+                
+
+
+                <Grid Grid.Row="1">
+                    <TextBlock
+                           x:Name="tbNome"
+                           Foreground="#FFFFFF"
+                           FontSize="12"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center" />
+                    <TextBlock
+                           x:Name="tbEmail"
+                           Foreground="#FFFFFF"
+                           FontSize="12"
+                           VerticalAlignment="Bottom"
+                           HorizontalAlignment="Center" />
+                </Grid>
+                
 
             </Grid>
 
@@ -328,7 +354,7 @@
 
                 </Menu.ItemsPanel>
 
-                <MenuItem Header="Login"
+                <MenuItem Header="Logout"
                           x:Name="Login"
                           Template="{StaticResource Menu_Template}" Click="Login_Click">
 

@@ -23,6 +23,15 @@ namespace Fat_online_WpF
         public MainWindow()
         {
             InitializeComponent();
+
+            
+
+            if (App.Current.Properties["Nome"] != "" && App.Current.Properties["Email"] != "")
+            {
+                tbNome.Text = App.Current.Properties["Nome"].ToString();
+                tbEmail.Text = App.Current.Properties["Email"].ToString();
+            }
+
             Frame.Navigate(new Uri("Pages/Home.xaml", UriKind.RelativeOrAbsolute));
         }
 
@@ -116,9 +125,13 @@ namespace Fat_online_WpF
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            Login login = new Login();
-            login.Show();
-            this.Close();
+            if (LoggedUser.IsLogged() == true)
+            {
+                LoggedUser.DetailsLogout();
+                Login login = new Login();
+                this.Close();
+                login.ShowDialog();
+            }
         }
     }
 }

@@ -27,8 +27,6 @@ namespace Fat_online_WpF
 
         private void btnLoginVoltar_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mw = new MainWindow();
-            mw.Show();
             this.Close();
         }
 
@@ -68,11 +66,78 @@ namespace Fat_online_WpF
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            if (tbNome.Text != "" && tbPassword.Text != "")
+            try
             {
-                string query = "SELECT COUNT(1) FROM `users` WHERE Email ='" + tbNome.Text + "';";
-                dbquery(query);
+                string server = "localhost";
+                string database = "fatonline";
+                string username = "root";
+                string password = "";
+                MySqlConnection con = new MySqlConnection("Server=" + server + ";" + "Database=" + database + ";" + "UID=" + username + ";" + "Password=" + password + ";");
+                MySqlCommand cmd;
+                MySqlDataAdapter da;
+                MySqlDataReader Reader;
+                int tentativas = 3;
+                int sucesso = 0;
+                con.Close();
+                con.Open();
+                cmd = new MySqlCommand("SELECT * FROM users WHERE Email ='" + tbNome.Text + "'", con);
+                Reader = cmd.ExecuteReader();
+                if (Reader.HasRows)
+                {
+                    while (Reader.Read())
+                    {
+                        LoggedUser.LoggedDetails(Reader.GetString(1),Reader.GetString(2),Reader.GetString(3),Reader.GetString(6));
+                        string passwordHash = Reader.GetString(4);
+                        if (PasswordHashCheck.Verify(tbPassword.Password.ToString(), passwordHash) == true)
+                        {
+                            sucesso += 1;
+                        }
+                    }
+
+                    if (sucesso == 1)
+                    {
+                        MessageBox.Show("Bem Vindo");
+                        MainWindow mw = new MainWindow();
+                        this.Close();
+                        mw.ShowDialog();
+                        
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Login Inválido");
+                    con.Close();
+                    tentativas -= 1;
+                    if (tentativas == 0)
+                    {
+                        MessageBox.Show("Excedeu o limite de tentativas, por favor tente mais tarde.");
+                        this.Close();
+                        
+                    }
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnSair_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void btnRegister_Click_1(object sender, RoutedEventArgs e)
+        {
+            Registo rgt = new Registo();
+            this.Close();
+            rgt.ShowDialog();
+           
         }
     }
 }

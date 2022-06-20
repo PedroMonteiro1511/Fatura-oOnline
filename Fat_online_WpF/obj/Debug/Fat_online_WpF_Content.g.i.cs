@@ -8,29 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/img_about.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/img_acoustic.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/img_album.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/img_artist.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/img_electronic.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/img_exit.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/img_folder.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/img_genre.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/img_hiphop.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/img_history.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/img_home.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/img_hotkey.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/img_input.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/img_jazz.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/img_metal.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/img_movies.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/img_music.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/img_playlist.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/img_pop.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/img_rock.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/img_search.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/img_setting.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/img_songs.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/max_mo.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/home.png")]
 
 

@@ -25,7 +25,7 @@ namespace Fat_online_WpF
             int value = cm.ExecuteNonQuery();
             if (value == 1)
             {
-                MessageBox.Show("Utilizador Adicionado com Sucesso");
+                MessageBox.Show("Sucesso");
             }
             con.Close();
         }
