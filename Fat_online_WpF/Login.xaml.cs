@@ -122,22 +122,16 @@ namespace Fat_online_WpF
             }
         }
 
-        private void btnRegister_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void btnSair_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
 
-        private void btnRegister_Click_1(object sender, RoutedEventArgs e)
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
             Registo rgt = new Registo();
             this.Close();
             rgt.ShowDialog();
-           
         }
     }
 }

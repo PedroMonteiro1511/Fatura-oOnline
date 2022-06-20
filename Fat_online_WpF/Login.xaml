@@ -40,8 +40,8 @@
             </StackPanel>
         </Grid>
         <Button x:Name="btnLogin" Width="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="65,65" Content="LOGIN" Click="btnLogin_Click" Foreground="Black"/>
-        <Button x:Name="btnRegister" Width="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="65,65" Foreground="Black"  Content="REGISTO" Cursor="Hand" Click="btnRegister_Click_1"/>
-        <Button x:Name="btnSair" Width="40" HorizontalAlignment="Right" VerticalAlignment="Top"  Content="X" Click="btnSair_Click"  />
+        <Button x:Name="btnRegister" Width="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="65,65" Foreground="Black"  Content="REGISTO" Cursor="Hand" Click="btnRegister_Click"/>
+        <Button x:Name="btnSair" Width="40" HorizontalAlignment="Right" VerticalAlignment="Top"  Content="X" Click="btnSair_Click" Cursor="Hand"  />
         <Image Source="Assets/home.png" Width="100" Height="100" VerticalAlignment="Top" Margin="30" />
     </Grid>
 </Window>

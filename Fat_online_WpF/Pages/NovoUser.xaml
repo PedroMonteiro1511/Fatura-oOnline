@@ -44,7 +44,7 @@
                 <Grid Grid.Column="1" VerticalAlignment="Center">
                     <StackPanel>
                         <TextBox x:Name="tbMorada" Foreground="Black" Margin="30,20,30,0" materialDesign:HintAssist.Hint="Morada do Utilizador" materialDesign:HintAssist.IsFloating="True" BorderBrush="Black" Cursor="Arrow"/>
-                        <TextBox x:Name="tbTelefone" Foreground="Black" Margin="30,20,30,0" materialDesign:HintAssist.Hint="Telefone do Utilizador" materialDesign:HintAssist.IsFloating="True" BorderBrush="Black" Cursor="Arrow"/>
+                        <TextBox x:Name="tbTelefone" Foreground="Black" Margin="30,20,30,0" materialDesign:HintAssist.Hint="Telefone do Utilizador" materialDesign:HintAssist.IsFloating="True" BorderBrush="Black" Cursor="Arrow" PreviewTextInput="tbTelefone_PreviewTextInput"/>
                     </StackPanel>
                 </Grid>
             </Grid>

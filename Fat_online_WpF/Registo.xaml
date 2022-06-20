@@ -31,20 +31,18 @@
                     <Button x:Name="btnLogin" Content="Já tens conta? Faz login AQUI" HorizontalAlignment="Right" Style="{StaticResource MaterialDesignFlatButton}" Click="btnLogin_Click"/>
                 </Grid>
 
-                <TextBox materialDesign:HintAssist.Hint="Nome Cmpleto" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 5"/>
-                <TextBox materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 5"/>
-                <TextBox materialDesign:HintAssist.Hint="Morada" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 5"/>
-                <TextBox materialDesign:HintAssist.Hint="Telefone" MaxLength="9" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 5"/>
-                <PasswordBox materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="0 5"/>
-                
-                <TextBox materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 5"/>
+                <TextBox x:Name="tbNome" materialDesign:HintAssist.Hint="Nome Cmpleto" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 5"/>
+                <TextBox x:Name="tbEmail" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 5"/>
+                <TextBox x:Name="tbMorada" materialDesign:HintAssist.Hint="Morada" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 5"/>
+                <TextBox x:Name="tbTelefone" materialDesign:HintAssist.Hint="Telefone" MaxLength="9" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 5" PreviewTextInput="tbTelefone_PreviewTextInput"/>
+                <PasswordBox x:Name="tbPassword" materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="0 5"/>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0" Margin="20,0">
-                        <Button x:Name="btnRegister" Content="Registar" Margin="0 20" Foreground="Black"/>
+                        <Button x:Name="btnRegister" Content="Registar" Margin="0 20" Foreground="Black" Click="btnRegister_Click" Cursor="Hand"/>
                     </Grid>
                     <Grid Grid.Column="1" Margin="20,0">
                         <Button x:Name="btnSair" Content="Sair" Click="btnSair_Click" Cursor="Hand" Foreground="Black"/>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -62,6 +63,12 @@ namespace Fat_online_WpF.Pages
                 //Metodo que faz a conexão e inserção dos dados
                 DBC.OpenAndExecute(query);
             }
+        }
+
+        private void tbTelefone_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }
