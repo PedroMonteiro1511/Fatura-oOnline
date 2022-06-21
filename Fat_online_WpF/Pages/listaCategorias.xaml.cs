@@ -27,6 +27,13 @@ namespace Fat_online_WpF.Pages
             LoadData();
         }
 
+
+        /// <summary>
+        /// 
+        /// Método para preencher os dados da tabela com todas as Categorias inseridas 
+        /// Na base de dados
+        /// 
+        /// </summary>
         private void LoadData()
         {
             string server = "localhost";
@@ -44,7 +51,7 @@ namespace Fat_online_WpF.Pages
 
 
             List<Categorias> lista = new List<Categorias>();
-
+            
             while (Reader.Read())
             {
 
@@ -59,6 +66,15 @@ namespace Fat_online_WpF.Pages
             con.Close();
         }
 
+
+        /// <summary>
+        /// 
+        /// Ao alterar a seleção do item da dataGrid, os dados da categoria selecionada
+        /// São enviados para as textboxes para poder alterar os dados das categorias.
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataCategorias_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
                 object item = dataCategorias.SelectedItem; //probably you find this object

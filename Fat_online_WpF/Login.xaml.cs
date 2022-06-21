@@ -20,6 +20,7 @@ namespace Fat_online_WpF
     /// </summary>
     public partial class Login : Window
     {
+        int tentativas = 3;
         public Login()
         {
             InitializeComponent();
@@ -30,87 +31,80 @@ namespace Fat_online_WpF
             this.Close();
         }
 
-        public void dbquery(string query)
-        {
-            string server = "localhost";
-            string database = "fatonline";
-            string username = "root";
-            string password = "";
-            string connection = "Server=" + server + ";" + "Database=" + database + ";" + "UID=" + username + ";" + "Password=" + password + ";";
-
-            MySqlConnection con = new MySqlConnection(connection);
-            con.Open();
-            MySqlCommand cmd = new MySqlCommand(query, con);
-            MySqlDataReader Reader = cmd.ExecuteReader();
-
-            List<Utilizador> lista = new List<Utilizador>();
-
-
-
-            while (Reader.Read())
-            {
-                Utilizador utilizador = new Utilizador();
-                utilizador.Id = Reader.GetInt32(0).ToString();
-                utilizador.Name = Reader.GetString(1);
-                utilizador.Email = Reader.GetString(6);
-                utilizador.Morada = Reader.GetString(2);
-                utilizador.Telefone = Reader.GetString(3);
-                utilizador.Password = Reader.GetString(4);
-                MessageBox.Show("Id:" + utilizador.Id + " Email:" + utilizador.Email);
-                lista.Add(utilizador);
-            }
-            
-            Reader.Close();
-            con.Close();
-        }
-
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             try
             {
+
+                // Ligar a COnexão a base de dados
+                //Inicializar as variaveis com os dados
                 string server = "localhost";
                 string database = "fatonline";
                 string username = "root";
                 string password = "";
+                // Fazer a conexão
                 MySqlConnection con = new MySqlConnection("Server=" + server + ";" + "Database=" + database + ";" + "UID=" + username + ";" + "Password=" + password + ";");
                 MySqlCommand cmd;
-                MySqlDataAdapter da;
                 MySqlDataReader Reader;
-                int tentativas = 3;
+
+                //Variável sucesso é usada para testar os campos do login
                 int sucesso = 0;
+                
+
+                //Abrir a ligação
                 con.Close();
                 con.Open();
+
+                //Comando SQL a executar
                 cmd = new MySqlCommand("SELECT * FROM users WHERE Email ='" + tbNome.Text + "'", con);
                 Reader = cmd.ExecuteReader();
+
+                //Se houver resultados então entra no if
                 if (Reader.HasRows)
                 {
+
+                    //E começa um loop com todos os resultados, em principio deve haver somente 1 resultado
                     while (Reader.Read())
                     {
-                        LoggedUser.LoggedDetails(Reader.GetString(1),Reader.GetString(2),Reader.GetString(3),Reader.GetString(6));
+
+                        // String com passwordHash do utilizador
                         string passwordHash = Reader.GetString(4);
+
+                        //Verificar se a password inserida corresponde á passwordHash
                         if (PasswordHashCheck.Verify(tbPassword.Password.ToString(), passwordHash) == true)
                         {
+
+                            //Guarda os dados do utilizador que faz login.
+                            LoggedUser.LoggedDetails(Reader.GetString(1), Reader.GetString(2), Reader.GetString(3), Reader.GetString(6));
+
+                            //Caso tudo esteja correto, sucesso fica com valor 1
                             sucesso += 1;
                         }
                     }
 
+
+                    //Com sucesso a valor 1 , abre o novo formulário
                     if (sucesso == 1)
                     {
-                        MessageBox.Show("Bem Vindo");
                         MainWindow mw = new MainWindow();
                         this.Close();
                         mw.ShowDialog();
                         
                     }
                 }
+                //Caso não haja resultados os dados estão incorretos ou o utilizador não existe
                 else
                 {
-                    MessageBox.Show("Login Inválido");
+                    // Remover uma tentativa, o Utilizador tem 3
+                    tentativas--;
+                    //Abrir a janela de erro a informar as tentativas restantes
+                    LoggedUser.Erro("Login Inválido", "Email ou Password incorretos, por favor tente novamente. \n \n \n Tentativas restantes: " + tentativas );
                     con.Close();
-                    tentativas -= 1;
+                    
+                    //Se as tentativas chegarem ao fim , o formulário é fechado.
                     if (tentativas == 0)
                     {
-                        MessageBox.Show("Excedeu o limite de tentativas, por favor tente mais tarde.");
+                        LoggedUser.Erro("Segurança", "Excedeu o limite de tentativas \n  \n Por favor tente mais tarde.");
                         this.Close();
                         
                     }

@@ -50,7 +50,7 @@ namespace Fat_online_WpF.Pages
             {
                 SubCategoria categorias = new SubCategoria();
                 categorias.Id = Reader.GetInt32(0).ToString();
-                categorias.idCategoria = Reader.GetString(1) + "(" + get_categoria(Reader.GetInt32(0)) + ")";
+                categorias.idCategoria = Reader.GetString(1) + "(" + Categorias.get_Categoria(Reader.GetInt32(1)) + ")";
                 categorias.Nome = Reader.GetString(2);
                 lista.Add(categorias);
             }
@@ -58,29 +58,6 @@ namespace Fat_online_WpF.Pages
             dataSubCategorias.ItemsSource = lista;
             Reader.Close();
             con.Close();
-        }
-
-        public string get_categoria(int id)
-        {
-            string server = "localhost";
-            string database = "fatonline";
-            string username = "root";
-            string password = "";
-            string connection = "Server=" + server + ";" + "Database=" + database + ";" + "UID=" + username + ";" + "Password=" + password + ";";
-            string Nome = "";
-
-            MySqlConnection con = new MySqlConnection(connection);
-            con.Open();
-            string sql = "SELECT * FROM `categorias` WHERE id = " + id;
-            MySqlCommand cmd = new MySqlCommand(sql, con);
-            MySqlDataReader Reader1 = cmd.ExecuteReader();
-
-            while (Reader1.Read())
-            {
-                Nome = Reader1.GetString(1);
-            }
-
-            return Nome;
         }
     }
 }

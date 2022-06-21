@@ -64,16 +64,7 @@ namespace Fat_online_WpF.Pages
             }
             Reader.Close();
 
-            sql = "SELECT * FROM subcategorias";
-            cmd = new MySqlCommand(sql, con);
-            Reader = cmd.ExecuteReader();
-
-
-            //Inserir dados na combobox das subcategorias
-            while (Reader.Read())
-            {
-                cbSubCategoria.Items.Add(Reader.GetString(2));
-            }
+           
 
             con.Close();
         }
@@ -142,6 +133,27 @@ namespace Fat_online_WpF.Pages
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
+        }
+       
+
+        private void cbCategoria_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+                cbSubCategoria.Items.Clear();
+
+                int id = new int();
+
+
+                id = Categorias.getCategoria_Nome(cbCategoria.SelectedItem.ToString());
+
+                string[] subCategorias = Categorias.get_subCategorias(id).ToArray();
+
+                foreach (string s in subCategorias)
+                {
+                    cbSubCategoria.Items.Add(s);
+                }
+
+           
         }
     }
 }

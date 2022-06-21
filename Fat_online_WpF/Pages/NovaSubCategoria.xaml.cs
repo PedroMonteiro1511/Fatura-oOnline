@@ -29,26 +29,13 @@ namespace Fat_online_WpF.Pages
 
         public void GetCategorias()
         {
-            string server = "localhost";
-            string database = "fatonline";
-            string username = "root";
-            string password = "";
-            string connection = "Server=" + server + ";" + "Database=" + database + ";" + "UID=" + username + ";" + "Password=" + password + ";";
+            string[] items = new string[] { };
+            items = Categorias.get_Categoria().ToArray();
 
-            MySqlConnection con = new MySqlConnection(connection);
-            con.Open();
-            string sql = "SELECT * FROM categorias";
-            MySqlCommand cmd = new MySqlCommand(sql, con);
-            MySqlDataReader Reader = cmd.ExecuteReader();
-
-
-            //Inserir dados na combobox das Categorias-Mãe
-            while (Reader.Read())
+            foreach (string s in items)
             {
-                cbCategoria.Items.Add(Reader.GetString(1));
+                cbCategoria.Items.Add(s);
             }
-            Reader.Close();
-            con.Close();
         }
 
         public void dbquery(string query)

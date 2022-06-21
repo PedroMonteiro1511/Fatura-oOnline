@@ -27,8 +27,13 @@ namespace Fat_online_WpF.Pages
             InitializeComponent();
             LoadData();
         }
-        
 
+        /// <summary>
+        /// 
+        /// Método para preencher a tabela com todos os produtos
+        /// inseridos na base de dados.
+        /// 
+        /// </summary>
         private void LoadData()
         {
             string server = "localhost";
@@ -67,6 +72,15 @@ namespace Fat_online_WpF.Pages
             con.Close();
         }
 
+
+        /// <summary>
+        /// 
+        /// Ao alterar o item selecionado, os dados desse mesmo item são
+        /// enviados para as textboxes para poderem ser alterados. 
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataProdutos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
            

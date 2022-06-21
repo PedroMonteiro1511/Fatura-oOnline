@@ -40,33 +40,49 @@ namespace Fat_online_WpF
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
             int valida = 0;
+            string erros = "";
 
             //Testar se todas as TextBox têm conteudo para não inserir Dados em branco na base de dados
             if (tbNome.Text == "")
             {
+                erros += "Preencher o nome \n";
                 valida += 1;
             }
             if (tbPassword.Password.ToString() == "")
             {
+                erros += "Insira uma Password \n";
                 valida += 1;
             }
             if (tbEmail.Text == "")
             {
+                erros += "Insira um Email \n";
+                valida += 1;
+            }
+            if (!Regex.IsMatch(tbEmail.Text, @"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
+            {
+                erros += "Insira um Email com formato válido (exemplo: teste@outlook.pt) \n";
+                valida += 1;
+            }
+            if (DBC.Get_Emails(tbEmail.Text))
+            {
+                erros += "O email inserido já está em uso \n";
                 valida += 1;
             }
             if (tbMorada.Text == "")
             {
+                erros += "Insira uma Morada \n";
                 valida += 1;
             }
             if (tbTelefone.Text == "")
             {
+                erros += "Insira um Numero de Telefone \n";
                 valida += 1;
             }
 
             //Caso nenhuma TextBox passe texto nulo, Pode começar a construir a query
             if (valida == 0)
             {
-
+                
                 // Hash Password para mais segurança
                 var password = PasswordHashCheck.Hash(tbPassword.Password.ToString());
 
@@ -75,6 +91,10 @@ namespace Fat_online_WpF
 
                 //Metodo que faz a conexão e inserção dos dados
                 DBC.OpenAndExecute(query);
+            }
+            else
+            {
+                LoggedUser.Erro("Campos Inválidos", erros);
             }
         }
 

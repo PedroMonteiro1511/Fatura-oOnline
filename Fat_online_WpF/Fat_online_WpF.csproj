@@ -107,9 +107,15 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DBC.cs" />
+    <Compile Include="ErroMensagem.xaml.cs">
+      <DependentUpon>ErroMensagem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoggedUser.cs" />
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NovaVenda.xaml.cs">
+      <DependentUpon>NovaVenda.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\listaCategorias.xaml.cs">
       <DependentUpon>listaCategorias.xaml</DependentUpon>
@@ -128,6 +134,10 @@
     <Compile Include="Registo.xaml.cs">
       <DependentUpon>Registo.xaml</DependentUpon>
     </Compile>
+    <Page Include="ErroMensagem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -145,6 +155,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NovaVenda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Home.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

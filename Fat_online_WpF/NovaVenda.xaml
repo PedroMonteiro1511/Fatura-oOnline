@@ -1,0 +1,90 @@
+﻿<Window x:Class="Fat_online_WpF.NovaVenda"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Fat_online_WpF"
+        
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+        
+        mc:Ignorable="d"
+        Title="Nova Venda" 
+        Height="700" 
+        Width="1100"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        >
+    <Grid Background="#2E333A">
+        <Border Margin="15" MinWidth="1075" MinHeight="675" HorizontalAlignment="Center" Background="White" VerticalAlignment="Center" Padding="30" CornerRadius="10" MaxWidth="800">
+
+            <StackPanel>
+                <TextBlock Text="Nova Venda" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
+
+                <Grid Margin="0 0 0 20">
+                    <Button x:Name="btnLogin" Content="Registar o Cliente" HorizontalAlignment="Right" Style="{StaticResource MaterialDesignFlatButton}" Cursor="Hand"/>
+                </Grid>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="700" />
+                        <ColumnDefinition Width="325" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0">
+                        <StackPanel>
+                            <ComboBox x:Name="cbUsers" VerticalAlignment="Top" HorizontalAlignment="Left" Width="300" Margin="30,15" SelectionChanged="cbUsers_SelectionChanged"/>
+                            <StackPanel x:Name="detalhesUtilizador" Visibility="Collapsed">
+                                <Grid>
+                                    <TextBox Name="tbNome" Width="300" Margin="30,15" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Nome do Cliente" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                                    <TextBox Name="tbMorada" Width="300" Margin="30,15" HorizontalAlignment="Right" materialDesign:HintAssist.Hint="Morada do Cliente" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                                </Grid>
+                                <Grid>
+                                    <TextBox Name="tbEmail" Width="300" Margin="30,15" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Nome do Cliente" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                                    <TextBox Name="tbTelefone" Width="300" Margin="30,15" HorizontalAlignment="Right" materialDesign:HintAssist.Hint="Morada do Cliente" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                                </Grid>
+                            </StackPanel>
+                            <Separator  Margin="10,15"/>
+                            <StackPanel Margin="0,30" x:Name="stackPagamento" Visibility="Collapsed">
+
+                                <Border BorderThickness="1" BorderBrush="Black">
+                                    <StackPanel>
+                                        <TextBlock Text="Pagamento" HorizontalAlignment="Center" FontSize="36"/>
+                                        <Grid>
+                                            <TextBox Name="tbTotalItens" Width="300" Margin="30,15" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Total de Items" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                                            <TextBox Name="tbMontante" Width="300" Margin="30,15" HorizontalAlignment="Right" materialDesign:HintAssist.Hint="Total a Pagar" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                                        </Grid>
+                                        <Grid>
+                                            <TextBox Name="tbPago" Width="300" Margin="30,15" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Montate Recebido" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                                        </Grid>
+                                    </StackPanel>
+                                </Border>
+
+
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid Grid.Column="1" Margin="0,0,10,0">
+                        <ListView x:Name="lv1">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="Produto" />
+                                    <GridViewColumn Header="Quant." />
+                                    <GridViewColumn Header="Total" />
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </Grid>
+                </Grid>
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

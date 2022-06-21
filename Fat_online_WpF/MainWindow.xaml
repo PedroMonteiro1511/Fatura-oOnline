@@ -126,7 +126,8 @@
 
                     </MenuItem>
                     <MenuItem Header="Nova Venda"
-                              Template="{StaticResource Item_Template}">
+                              x:Name="novaVenda"
+                              Template="{StaticResource Item_Template}" Click="novaVenda_Click">
 
 
                         <MenuItem.Icon>

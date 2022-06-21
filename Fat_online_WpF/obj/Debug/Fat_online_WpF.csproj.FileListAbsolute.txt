@@ -71,3 +71,7 @@ C:\Users\Utilizador\source\repos\Fat_online_WpF\Fat_online_WpF\obj\Debug\Login.g
 C:\Users\Utilizador\source\repos\Fat_online_WpF\Fat_online_WpF\obj\Debug\Login.baml
 C:\Users\Utilizador\source\repos\Fat_online_WpF\Fat_online_WpF\obj\Debug\Registo.g.cs
 C:\Users\Utilizador\source\repos\Fat_online_WpF\Fat_online_WpF\obj\Debug\Registo.baml
+C:\Users\Utilizador\source\repos\Fat_online_WpF\Fat_online_WpF\obj\Debug\ErroMensagem.g.cs
+C:\Users\Utilizador\source\repos\Fat_online_WpF\Fat_online_WpF\obj\Debug\ErroMensagem.baml
+C:\Users\Utilizador\source\repos\Fat_online_WpF\Fat_online_WpF\obj\Debug\NovaVenda.g.cs
+C:\Users\Utilizador\source\repos\Fat_online_WpF\Fat_online_WpF\obj\Debug\NovaVenda.baml

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,5 +16,35 @@ namespace Fat_online_WpF
         public string Telefone { get; set; }
 
         public string Password { get; set; }
+
+        public static List<Utilizador> getUsers()
+        {
+            string server = "localhost";
+            string database = "fatonline";
+            string username = "root";
+            string password = "";
+            string connection = "Server=" + server + ";" + "Database=" + database + ";" + "UID=" + username + ";" + "Password=" + password + ";";
+            List<Utilizador> utilizador = new List<Utilizador>();
+
+            MySqlConnection con = new MySqlConnection(connection);
+            con.Open();
+            string sql = "SELECT * FROM `users`";
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            MySqlDataReader Reader1 = cmd.ExecuteReader();
+
+            while (Reader1.Read())
+            {
+                Utilizador user = new Utilizador();
+                user.Id = Reader1.GetInt32(0).ToString();
+                user.Name = Reader1.GetString(1);
+                user.Email = Reader1.GetString(6);
+                user.Morada = Reader1.GetString(2);
+                user.Telefone = Reader1.GetString(3);
+                utilizador.Add(user);
+            }
+
+            return utilizador;
+        }
+
     }
 }

@@ -27,6 +27,13 @@ namespace Fat_online_WpF.Pages
             LoadData();
         }
 
+
+        /// <summary>
+        /// 
+        /// Método para preencher a tabela com todas as marcas 
+        /// inseridas na base de dados.
+        /// 
+        /// </summary>
         public void LoadData()
         {
             string server = "localhost";
@@ -60,9 +67,18 @@ namespace Fat_online_WpF.Pages
             con.Close();
         }
 
+
+        /// <summary>
+        ///     
+        /// Ao alterar o item selecionado, os dados desse mesmo item são
+        /// enviados para as textboxes para poderem ser alterados.
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataMarcas_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-                object item = dataMarcas.SelectedItem; //probably you find this object
+            object item = dataMarcas.SelectedItem;
                 string Nome = (dataMarcas.SelectedCells[1].Column.GetCellContent(item) as TextBlock).Text;
                 
                 tbNome.Text = Nome;

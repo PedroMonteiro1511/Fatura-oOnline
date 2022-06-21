@@ -133,5 +133,12 @@ namespace Fat_online_WpF
                 login.ShowDialog();
             }
         }
+
+        private void novaVenda_Click(object sender, RoutedEventArgs e)
+        {
+            NovaVenda novaVenda = new NovaVenda();
+            novaVenda.ShowDialog();
+            
+        }
     }
 }
