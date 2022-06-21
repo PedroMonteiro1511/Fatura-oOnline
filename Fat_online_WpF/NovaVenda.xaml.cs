@@ -23,8 +23,10 @@ namespace Fat_online_WpF
         {
             InitializeComponent();
 
-            Utilizador[] nome = Utilizador.getUsers().ToArray();
+            Produto[] produtos = Produto.getUsers().ToArray();
+            lvProdutos.ItemsSource = produtos;
 
+            Utilizador[] nome = Utilizador.getUsers().ToArray();
             cbUsers.ItemsSource = nome;
             cbUsers.DisplayMemberPath = "Name";
         }

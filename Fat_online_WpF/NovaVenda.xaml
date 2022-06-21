@@ -15,14 +15,14 @@
         
         mc:Ignorable="d"
         Title="Nova Venda" 
-        Height="700" 
-        Width="1100"
+        Height="768" 
+        Width="1376"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         >
     <Grid Background="#2E333A">
-        <Border Margin="15" MinWidth="1075" MinHeight="675" HorizontalAlignment="Center" Background="White" VerticalAlignment="Center" Padding="30" CornerRadius="10" MaxWidth="800">
+        <Border Margin="15" MinWidth="1251" MinHeight="643" HorizontalAlignment="Center" Background="White" VerticalAlignment="Center" Padding="10" CornerRadius="10" MaxWidth="800">
 
             <StackPanel>
                 <TextBlock Text="Nova Venda" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
@@ -33,8 +33,8 @@
 
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="700" />
-                        <ColumnDefinition Width="325" />
+                        <ColumnDefinition Width="900" />
+                        <ColumnDefinition Width="350" />
                     </Grid.ColumnDefinitions>
 
                     <Grid Grid.Column="0">
@@ -51,36 +51,54 @@
                                 </Grid>
                             </StackPanel>
                             <Separator  Margin="10,15"/>
-                            <StackPanel Margin="0,30" x:Name="stackPagamento" >
-
-                                <Border BorderThickness="1" BorderBrush="Black">
-                                    <StackPanel>
-                                        <TextBlock Text="Pagamento" HorizontalAlignment="Center" FontSize="36"/>
-                                        <Grid>
-                                            <TextBox Name="tbTotalItens" Width="300" Margin="30,15" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Total de Items" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-                                            <TextBox Name="tbMontante" Width="300" Margin="30,15" HorizontalAlignment="Right" materialDesign:HintAssist.Hint="Total a Pagar" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-                                        </Grid>
-                                        <Grid>
-                                            <TextBox Name="tbPago" Width="300" Margin="30,15" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Montate Recebido" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-                                        </Grid>
-                                    </StackPanel>
-                                </Border>
-
-
-                            </StackPanel>
+                            <Border BorderBrush="Black" BorderThickness="1">
+                                <StackPanel>
+                                    <Grid>
+                                        <ComboBox x:Name="cbCategorias" Margin="100,15,10,15" materialDesign:HintAssist.Hint="Categoria" HorizontalAlignment="Left" Width="300"/>
+                                        <ComboBox x:Name="cbSubCategorias" Margin="10,15,100,15" materialDesign:HintAssist.Hint="SubCategoria" HorizontalAlignment="Right" Width="300"/>
+                                    </Grid>
+                                    <ListView x:Name="lvProdutos" Height="275">
+                                        <ListView.View>
+                                            <GridView>
+                                                <GridViewColumn Header="Produto" DisplayMemberBinding="{Binding Nome}"/>
+                                                <GridViewColumn Header="Preço" DisplayMemberBinding="{Binding Preco}"/>
+                                            </GridView>
+                                        </ListView.View>
+                                    </ListView>
+                                </StackPanel>
+                            </Border>
+                            
                         </StackPanel>
                     </Grid>
 
                     <Grid Grid.Column="1" Margin="0,0,10,0">
-                        <ListView x:Name="lv1">
-                            <ListView.View>
-                                <GridView>
-                                    <GridViewColumn Header="Produto" />
-                                    <GridViewColumn Header="Quant." />
-                                    <GridViewColumn Header="Total" />
-                                </GridView>
-                            </ListView.View>
-                        </ListView>
+                        <StackPanel>
+                            <ListView x:Name="lv1" Height="300" VerticalAlignment="Top">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Produto" />
+                                        <GridViewColumn Header="Quant." />
+                                        <GridViewColumn Header="Total" />
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                            <StackPanel  x:Name="stackPagamento" >
+
+                                <Border BorderThickness="1" BorderBrush="Black" Margin="10,10,10,0">
+                                    <StackPanel>
+                                        <TextBlock Text="Pagamento" HorizontalAlignment="Center" FontSize="36"/>
+                                        <Grid>
+                                            <StackPanel>
+                                                <TextBox IsReadOnly="True" Name="tbMontante" Width="200" Margin="30,15" HorizontalAlignment="Center" materialDesign:HintAssist.Hint="Total a Pagar" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="Arrow"/>
+                                                <TextBox Name="tbPago" Width="200" Margin="30,15" HorizontalAlignment="Center" materialDesign:HintAssist.Hint="Montate Recebido" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                                                <Button Content="Pagar" Margin="10,15"/>
+                                            </StackPanel>
+                                        </Grid>
+                                    </StackPanel>
+                                </Border>
+                            </StackPanel>
+                        </StackPanel>
+                        
                     </Grid>
                 </Grid>
 
