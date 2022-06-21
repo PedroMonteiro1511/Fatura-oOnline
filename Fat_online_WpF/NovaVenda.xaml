@@ -42,16 +42,16 @@
                             <ComboBox x:Name="cbUsers" VerticalAlignment="Top" HorizontalAlignment="Left" Width="300" Margin="30,15" SelectionChanged="cbUsers_SelectionChanged"/>
                             <StackPanel x:Name="detalhesUtilizador" Visibility="Collapsed">
                                 <Grid>
-                                    <TextBox Name="tbNome" Width="300" Margin="30,15" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Nome do Cliente" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-                                    <TextBox Name="tbMorada" Width="300" Margin="30,15" HorizontalAlignment="Right" materialDesign:HintAssist.Hint="Morada do Cliente" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                                    <TextBox IsReadOnly="True" Name="tbNome" Width="300" Margin="30,15" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Nome do Cliente" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                                    <TextBox IsReadOnly="True" Name="tbMorada" Width="300" Margin="30,15" HorizontalAlignment="Right" materialDesign:HintAssist.Hint="Morada do Cliente" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                                 </Grid>
                                 <Grid>
-                                    <TextBox Name="tbEmail" Width="300" Margin="30,15" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Nome do Cliente" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-                                    <TextBox Name="tbTelefone" Width="300" Margin="30,15" HorizontalAlignment="Right" materialDesign:HintAssist.Hint="Morada do Cliente" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                                    <TextBox IsReadOnly="True" Name="tbEmail" Width="300" Margin="30,15" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Nome do Cliente" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                                    <TextBox IsReadOnly="True" Name="tbTelefone" Width="300" Margin="30,15" HorizontalAlignment="Right" materialDesign:HintAssist.Hint="Morada do Cliente" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                                 </Grid>
                             </StackPanel>
                             <Separator  Margin="10,15"/>
-                            <StackPanel Margin="0,30" x:Name="stackPagamento" Visibility="Collapsed">
+                            <StackPanel Margin="0,30" x:Name="stackPagamento" >
 
                                 <Border BorderThickness="1" BorderBrush="Black">
                                     <StackPanel>

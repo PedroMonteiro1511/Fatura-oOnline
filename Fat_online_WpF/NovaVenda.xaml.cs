@@ -31,8 +31,13 @@ namespace Fat_online_WpF
 
         private void cbUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            var user = new Utilizador() ;
             detalhesUtilizador.Visibility = Visibility.Visible;
-            MessageBox.Show((cbUsers.SelectedItem as Utilizador).Id.ToString());
+            user = (cbUsers.SelectedItem as Utilizador);
+            tbNome.Text = user.Name;
+            tbMorada.Text = user.Morada;
+            tbTelefone.Text = user.Telefone;
+            tbEmail.Text = user.Email;
         }
     }
 }

@@ -24,6 +24,8 @@ namespace Fat_online_WpF
         public Login()
         {
             InitializeComponent();
+            tbNome.Text = "hash@teste.pt";
+            tbPassword.Password = "pedromonteiro";
         }
 
         private void btnLoginVoltar_Click(object sender, RoutedEventArgs e)
