@@ -59,6 +59,33 @@ namespace Fat_online_WpF
             return nome;
         }
 
+        public static List<Categorias> getAllCategorias()
+        {
+            string server = "localhost";
+            string database = "fatonline";
+            string username = "root";
+            string password = "";
+            string connection = "Server=" + server + ";" + "Database=" + database + ";" + "UID=" + username + ";" + "Password=" + password + ";";
+            List<Categorias> cat = new List<Categorias>();
+
+            MySqlConnection con = new MySqlConnection(connection);
+            con.Open();
+            string sql = "SELECT * FROM `categorias`";
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            MySqlDataReader Reader1 = cmd.ExecuteReader();
+
+            while (Reader1.Read())
+            {
+                Categorias categorias = new Categorias();
+                categorias.ID = Reader1.GetInt32(0).ToString();
+                categorias.Name = Reader1.GetString(1);
+                cat.Add(categorias);
+            }
+
+
+            return cat;
+        }
+
         public static List<string> get_subCategorias(int id)
         {
             string server = "localhost";

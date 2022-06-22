@@ -35,7 +35,7 @@
                 </Grid.RowDefinitions>
 
                 <Grid Grid.Row="0">
-                    <Border Background="Orange"
+                    <Border Background="LightGreen"
                         Height="25"
                         CornerRadius="3,0,0,3"
                         Width="6"

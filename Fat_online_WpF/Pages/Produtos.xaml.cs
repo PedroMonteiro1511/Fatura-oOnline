@@ -124,7 +124,9 @@ namespace Fat_online_WpF.Pages
 
             if (valida == 0)
             {
-                string query = "INSERT INTO `produtos`(`nome`, `referencia`, `descricao`, `marca`, `categoria`, `subcategoria`, `preco`) VALUES ('" + tbNome.Text + "','" + tbReferencia.Text + "','" + tbDesc.Text + "','" + cbMarca.Text + "','" + cbCategoria.Text + "','" + cbSubCategoria.Text + "', " + int.Parse(tbPreco.Text) + ")";
+                string categoriaID = Categorias.getCategoria_Nome(cbCategoria.Text).ToString();
+                string subcategoriaID = SubCategoria.get_Subcategory_ID_With_Name(cbSubCategoria.Text).ToString();
+                string query = "INSERT INTO `produtos`(`nome`, `referencia`, `descricao`, `marca`, `categoria`, `subcategoria`, `preco`) VALUES ('" + tbNome.Text + "','" + tbReferencia.Text + "','" + tbDesc.Text + "','" + cbMarca.Text + "','" + categoriaID + "','" + subcategoriaID + "', " + int.Parse(tbPreco.Text) + ")";
                 dbquery(query);
             }
         }
