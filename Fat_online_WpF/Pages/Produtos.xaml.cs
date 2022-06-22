@@ -133,7 +133,48 @@ namespace Fat_online_WpF.Pages
 
         private void tbPreco_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new Regex("[^0-9]+");
+            var ue = e.Source as TextBox;
+            string simbolo = "";
+            int something = 0;
+            Regex regex;
+            if (ue.Text.Contains("."))
+            {
+                simbolo = "dot";
+                something = 1;
+            }
+            else if (ue.Text.Contains(","))
+            {
+                simbolo = "comma";
+                something = 1;
+            }
+            {
+                regex = new Regex("[^0-9.]+");
+            }
+
+            if (simbolo == "dot" && something == 0)
+            {
+                regex = new Regex("[^0-9]+");
+            }
+            else
+            {
+                if (simbolo == "dot" && something == 1)
+                {
+                    regex = new Regex("[^0-9.]+");
+                }
+            }
+
+            if (simbolo == "comma" && something == 0)
+            {
+                regex = new Regex("[^0-9]+");
+            }
+            else
+            {
+                if (simbolo == "comma" && something == 1)
+                {
+                    regex = new Regex("[^0-9,]+");
+                }
+            }
+
             e.Handled = regex.IsMatch(e.Text);
         }
        
