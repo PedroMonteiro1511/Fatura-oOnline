@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LiveCharts;
+using LiveCharts.Wpf;
 
 namespace Fat_online_WpF.Pages
 {
@@ -23,6 +25,10 @@ namespace Fat_online_WpF.Pages
         public Home()
         {
             InitializeComponent();
+            numeroProdutos.Text = Produto.getProdutosThirtyDays().ToString();
+            numeroUsers.Text = Utilizador.getUserThirtyDays().ToString();
+            numeroMarcas.Text = Marca.getMarcasThirtyDays().ToString();
         }
+
     }
 }

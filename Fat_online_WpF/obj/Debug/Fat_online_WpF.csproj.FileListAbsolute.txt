@@ -77,3 +77,9 @@ C:\Users\Utilizador\source\repos\Fat_online_WpF\Fat_online_WpF\obj\Debug\NovaVen
 C:\Users\Utilizador\source\repos\Fat_online_WpF\Fat_online_WpF\obj\Debug\NovaVenda.baml
 C:\Users\Utilizador\source\repos\Fat_online_WpF\Fat_online_WpF\bin\Debug\DevExpress.Data.v22.1.dll
 C:\Users\Utilizador\source\repos\Fat_online_WpF\Fat_online_WpF\bin\Debug\DevExpress.Data.v22.1.xml
+C:\Users\Utilizador\source\repos\Fat_online_WpF\Fat_online_WpF\bin\Debug\LiveCharts.dll
+C:\Users\Utilizador\source\repos\Fat_online_WpF\Fat_online_WpF\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\Utilizador\source\repos\Fat_online_WpF\Fat_online_WpF\bin\Debug\LiveCharts.pdb
+C:\Users\Utilizador\source\repos\Fat_online_WpF\Fat_online_WpF\bin\Debug\LiveCharts.xml
+C:\Users\Utilizador\source\repos\Fat_online_WpF\Fat_online_WpF\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\Utilizador\source\repos\Fat_online_WpF\Fat_online_WpF\bin\Debug\LiveCharts.Wpf.xml
